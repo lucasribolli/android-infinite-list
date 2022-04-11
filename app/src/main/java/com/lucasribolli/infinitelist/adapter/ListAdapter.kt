@@ -5,7 +5,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.lucasribolli.infinitelist.database.StoredObject
 
-class ListAdapter(): PagingDataAdapter<StoredObject, ListViewHolder>(DIFF_CALLBACK) {
+class ListAdapter : PagingDataAdapter<StoredObject, ListViewHolder>(DIFF_CALLBACK) {
     companion object {
         private val DIFF_CALLBACK = object :
             DiffUtil.ItemCallback<StoredObject>() {

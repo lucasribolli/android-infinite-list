@@ -38,4 +38,5 @@ class MainViewModel constructor(
     ) {
         dao.getAllPaged()
     }.flow
+    .cachedIn(viewModelScope)
 }

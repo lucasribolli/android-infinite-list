@@ -15,6 +15,9 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
+// Implement Adapter Delegate
+// https://medium.com/sampingan-tech/adapter-delegate-favor-composition-over-inheritance-in-multiple-layout-recyclerview-adapter-bfa0c48b43b4
+
 class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: MainViewModel
     private lateinit var adapter: ListAdapter
@@ -30,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun observePagedData() {
         lifecycleScope.launch {
-            viewModel.items.collectLatest { data ->
+            viewModel.items().collectLatest { data ->
                 adapter.submitData(data)
             }
         }
